@@ -9,6 +9,7 @@ const mealImageImg = document.querySelector('#meal-image')
 const mealVideoA = document.querySelector('#meal-video')
 const mealAreaH3 = document.querySelector('#meal-area')
 const URL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
+const ingredientsUl = document.querySelector('#ingredients-list')
 
 // Helper Functions
 const fetchData = () => {
@@ -39,7 +40,24 @@ const displayMealInfo = (mealObj) => {
     mealVideoA.href = mealObj.strYoutube
     mealVideoA.textContent = 'YouTube Link'
     mealInstructionP.textContent = mealObj.strInstructions
-}
+    
+    while (ingredientsUl.firstChild) {
+        ingredientsUl.removeChild(ingredientsUl.lastChild)
+    }
+
+    const ingredientsH3 = document.createElement('h3')
+    ingredientsH3.textContent = 'Ingredients:'
+    ingredientsUl.append(ingredientsH3)
+
+        for(let i in mealObj) {
+            if(i.startsWith("strIngredient") && mealObj[i] !== "") {
+            const ingredientsLi = document.createElement('li')
+            ingredientsLi.textContent = mealObj[i]
+            ingredientsUl.append(ingredientsLi)
+            }
+        }
+    }
+
 
 
 
