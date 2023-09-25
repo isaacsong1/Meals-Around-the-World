@@ -2,12 +2,12 @@
 // Global Variables
 const mealListDiv = document.querySelector('#meal-list')
 const mealInfoDiv = document.querySelector('#meal-info')
-const mealNameH1 = document.createElement('h1')
-const mealCategoryH3 = document.createElement('h3')
-const mealInstructionP = document.createElement('p')
-const mealImageImg = document.createElement('img')
-const mealVideoA = document.createElement('a')
-const mealAreaH3 = document.createElement('h3')
+const mealNameH1 = document.querySelector('#meal-name')
+const mealCategoryH3 = document.querySelector('#meal-category')
+const mealInstructionP = document.querySelector('#meal-instructions')
+const mealImageImg = document.querySelector('#meal-image')
+const mealVideoA = document.querySelector('#meal-video')
+const mealAreaH3 = document.querySelector('#meal-area')
 
 // Helper Functions
 const fetchData = () => {
@@ -15,7 +15,7 @@ const fetchData = () => {
 }
 
 const appendMealNameToNav = (mealObj) => {
-    
+
 }
 
 const displayMealInfo = (mealObj) => {
