@@ -15,7 +15,10 @@ const fetchData = () => {
     fetch(URL)
     .then(response => response.json())
     .then(mealArray => {
-        mealArray.forEach(mealObj => appendMealNameToNav(mealObj))
+        // console.log(mealArray.meals)
+        const mealsArray = mealArray.meals
+        mealsArray.forEach(mealObj => appendMealNameToNav(mealObj))
+        displayMealInfo(mealsArray[0])
     })
     .catch(error => alert(error))
 }
