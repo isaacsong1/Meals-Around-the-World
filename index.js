@@ -10,7 +10,6 @@ const mealVideoA = document.createElement('a')
 const mealAreaH3 = document.createElement('h3')
 
 // Helper Functions
-
 const displayMealInfo = (mealObj) => {
     mealNameH1.textContent = mealObj.strMeal
     mealImageImg.src = mealObj.strMealThumb
@@ -21,7 +20,6 @@ const displayMealInfo = (mealObj) => {
     mealVideoA.textContent = 'YouTube Link'
     mealInstructionP.textContent = mealObj.strInstructions
 }
-
 
 //! Hanna's Section
 
