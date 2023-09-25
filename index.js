@@ -8,10 +8,16 @@ const mealInstructionP = document.querySelector('#meal-instructions')
 const mealImageImg = document.querySelector('#meal-image')
 const mealVideoA = document.querySelector('#meal-video')
 const mealAreaH3 = document.querySelector('#meal-area')
+const URL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
 
 // Helper Functions
 const fetchData = () => {
-
+    fetch(URL)
+    .then(response => response.json())
+    .then(mealArray => {
+        mealArray.forEach(mealObj => appendMealNameToNav(mealObj))
+    })
+    .catch(error => alert(error))
 }
 
 const appendMealNameToNav = (mealObj) => {
