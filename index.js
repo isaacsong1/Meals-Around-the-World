@@ -57,8 +57,13 @@ const search = document.querySelector('.search-form-container');
 search.addEventListener('change', (e) => tempFunc(e));
 
 // Helper Functions
+// Get e.target.value
+// Fetch data using e.target.value at the end of our URL
+// Remove elements in navbar
+// Populate navbar with elements from search query
+
 const tempFunc = (e) => {
-    debugger;
+    console.log(e.target.value);
 }
 
 
