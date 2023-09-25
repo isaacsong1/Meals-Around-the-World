@@ -52,3 +52,14 @@ fetchData()
 
 
 //! Isaac S's Section
+// Global Variables
+const search = document.querySelector('.search-form-container');
+search.addEventListener('change', (e) => tempFunc(e));
+
+// Helper Functions
+const tempFunc = (e) => {
+    debugger;
+}
+
+
+
