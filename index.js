@@ -15,7 +15,10 @@ const fetchData = () => {
 }
 
 const appendMealNameToNav = (mealObj) => {
-
+    const mealLi = document.createElement('li')
+    mealLi.textContent = mealObj.strMeal
+    
+    mealListDiv.append(mealLi)
 }
 
 const displayMealInfo = (mealObj) => {
