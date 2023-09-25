@@ -17,5 +17,36 @@
     <div id="meal-info">
         
     </div>
+    <button id="open-button" onclick="openForm()">Open Meal's Form</button>
+
+<div class="form-popup" id="myForm">
+  <form  class="form-container">
+    <h2>Add Meal</h2>
+
+    <label for="name"><b>Meal's name</b></label>
+    <input id="name" type="text" name="name" placeholder="Enter a meal name" required/>
+
+    <label for="category"><b>Category</b></label>
+    <input id="category" type="text" name="category"  placeholder="Meal's category" required/>
+    
+    <label for="instruction"><b>Meal's instruction</b></label>
+    <input id="instruction" type="text" name="instruction" placeholder="Enter meal's instruction" required/>
+
+    <label for="location"><b>Meal's destination</b></label>
+    <input id="location" type="text" name="location" placeholder="Enter meal's destination" required/>
+
+    <label for="name"><b>Meal's name</b></label>
+    <input id="name" type="text"  placeholder="Meal's name" required>
+
+    <label for="image"><b>Meal's Umage</b></label>
+    <input id="image" type="text"  placeholder="Enter a meal's Image URL" required/>
+
+    <label for="video"><b>Meal's Youtube Video</b></label>
+    <input id="video" type="text"  placeholder="Enter a meal's Youtube URL" required/>
+
+    <button type="button" id="close" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
 </body> 
 </html>
