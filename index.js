@@ -10,6 +10,14 @@ const mealVideoA = document.createElement('a')
 const mealAreaH3 = document.createElement('h3')
 
 // Helper Functions
+const fetchData = () => {
+
+}
+
+const appendMealNameToNav = (mealObj) => {
+    
+}
+
 const displayMealInfo = (mealObj) => {
     mealNameH1.textContent = mealObj.strMeal
     mealImageImg.src = mealObj.strMealThumb
