@@ -23,7 +23,7 @@ const fetchData = () => {
 const appendMealNameToNav = (mealObj) => {
     const mealLi = document.createElement('li')
     mealLi.textContent = mealObj.strMeal
-    
+    mealLi.addEventListener('click', () => displayMealInfo(mealObj))
     mealListDiv.append(mealLi)
 }
 
@@ -38,6 +38,10 @@ const displayMealInfo = (mealObj) => {
     mealInstructionP.textContent = mealObj.strInstructions
 }
 
+
+
+// Execute Code
+fetchData()
 //! Hanna's Section
 
 
