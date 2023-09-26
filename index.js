@@ -54,7 +54,6 @@ fetchData()
 //! Isaac S's Section
 // Global Variables
 const search = document.querySelector('.search-form-container');
-search.addEventListener('change', (e) => searchByName(e));
 
 // Helper Functions
 const updateNav = () => {
@@ -72,14 +71,15 @@ const searchByName = (e) => {
     .then(resp => resp.json())
     .then(mealArr => {
         updateNav();
-        if (mealArr.meal) {
+        if (mealArr) {
             mealArr.meals.forEach(meal => appendMealNameToNav(meal));
-            displayMealInfo(mealArr[0]);
         } else {
             alert('No meals exist with that name');
         }
     })
 }
 
+// Execute
+search.addEventListener('change', searchByName);
 
 
