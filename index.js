@@ -79,7 +79,7 @@ const displayMealInfo = mealObj => {
 fetchData();
 
 //! Hanna's Section
-//New form to add meal
+//Form to add meal
 
 //Global variable
 const mealForm = document.querySelector("#form-container");
