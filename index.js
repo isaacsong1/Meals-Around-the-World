@@ -87,3 +87,34 @@ fetchData()
 
 
 //! Isaac S's Section
+// Global Variables
+const search = document.querySelector('.search-form-container');
+
+// Helper Functions
+const updateNav = () => {
+    while (mealListDiv.firstChild) {
+        mealListDiv.removeChild(mealListDiv.lastChild);
+    }
+}
+
+// Get e.target.value
+// Fetch data using e.target.value at the end of our URL
+// Remove elements in navbar
+// Populate navbar with elements from search query
+const searchByName = (e) => {
+    fetch(`${URL}${e.target.value}`)
+    .then(resp => resp.json())
+    .then(mealArr => {
+        updateNav();
+        if (mealArr) {
+            mealArr.meals.forEach(meal => appendMealNameToNav(meal));
+        } else {
+            alert('No meals exist with that name');
+        }
+    })
+}
+
+// Execute
+search.addEventListener('change', searchByName);
+
+
