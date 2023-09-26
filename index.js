@@ -105,6 +105,7 @@ const addMealToForm = e => {
 
   //Invoke the function to get new meal on the browser
   displayMealInfo(newMeal);
+  appendMealNameToNav(newMeal);
   //Reset the form
   e.target.reset();
 };
