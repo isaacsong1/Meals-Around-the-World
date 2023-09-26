@@ -83,6 +83,7 @@ fetchData();
 
 //Global variable
 const mealForm = document.querySelector("#form-container");
+const modal = document.querySelector("#mealModal");
 
 const addMealToForm = e => {
   //Prevent the page from refreshing
@@ -105,11 +106,24 @@ const addMealToForm = e => {
 
   //Invoke the function to get new meal on the browser
   displayMealInfo(newMeal);
+  //Invoke the function to get new meal to the list
+  appendMealNameToNav(newMeal);
   //Reset the form
   e.target.reset();
 };
 //Invoke the function when the form is submitted
 mealForm.addEventListener("submit", addMealToForm);
+
+////For the modal
+//To open the modal
+function openForm() {
+  modal.style.display = "block";
+}
+
+//To close the modal
+function closeForm() {
+  modal.style.display = "none";
+}
 
 //! Isaac S's Section
 // Global Variables
