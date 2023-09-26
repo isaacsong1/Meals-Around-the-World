@@ -79,16 +79,22 @@ const displayMealInfo = mealObj => {
 fetchData();
 
 //! Hanna's Section
+//New form to add meal
+
+//Global variable
 const mealForm = document.querySelector("#form-container");
 
 const addMealToForm = e => {
+  //Prevent the page from refreshing
   e.preventDefault();
+  //Target HTML elements in the form with texts entered in the inputs
   const inputName = e.target.name.value;
   const inputCategory = e.target.category.value;
   const inputInstruction = e.target.instruction.value;
   const inputLocation = e.target.location.value;
   const inputImage = e.target.image.value;
 
+  //Update/add inputs through HTML elements, which then is added to the database via properties.
   const newMeal = {
     strMeal: inputName,
     strCategory: inputCategory,
@@ -97,9 +103,12 @@ const addMealToForm = e => {
     strMealThumb: inputImage,
   };
 
+  //Invoke the function to get new meal on the browser
   displayMealInfo(newMeal);
+  //Reset the form
   e.target.reset();
 };
+//Invoke the function when the form is submitted
 mealForm.addEventListener("submit", addMealToForm);
 
 //! Isaac S's Section
