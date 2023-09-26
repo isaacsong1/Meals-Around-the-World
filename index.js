@@ -57,7 +57,11 @@ const search = document.querySelector('.search-form-container');
 search.addEventListener('change', (e) => searchByName(e));
 
 // Helper Functions
-
+const updateNav = () => {
+    while (mealListDiv.firstChild) {
+        mealListDiv.removeChild(mealListDiv.lastChild);
+    }
+}
 
 // Get e.target.value
 // Fetch data using e.target.value at the end of our URL
@@ -66,8 +70,14 @@ search.addEventListener('change', (e) => searchByName(e));
 const searchByName = (e) => {
     fetch(`${URL}${e.target.value}`)
     .then(resp => resp.json())
-    .then(test => {
-        debugger;
+    .then(mealArr => {
+        updateNav();
+        if (mealArr.meal) {
+            mealArr.meals.forEach(meal => appendMealNameToNav(meal));
+            displayMealInfo(mealArr[0]);
+        } else {
+            alert('No meals exist with that name');
+        }
     })
 }
 
