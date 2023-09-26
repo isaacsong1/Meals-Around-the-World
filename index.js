@@ -54,16 +54,21 @@ fetchData()
 //! Isaac S's Section
 // Global Variables
 const search = document.querySelector('.search-form-container');
-search.addEventListener('change', (e) => tempFunc(e));
+search.addEventListener('change', (e) => searchByName(e));
 
 // Helper Functions
+
+
 // Get e.target.value
 // Fetch data using e.target.value at the end of our URL
 // Remove elements in navbar
 // Populate navbar with elements from search query
-
-const tempFunc = (e) => {
-    console.log(e.target.value);
+const searchByName = (e) => {
+    fetch(`${URL}${e.target.value}`)
+    .then(resp => resp.json())
+    .then(test => {
+        debugger;
+    })
 }
 
 
