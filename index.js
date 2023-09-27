@@ -100,7 +100,7 @@ const addMealToForm = e => {
   const newMeal = {
     strMeal: inputName,
     strCategory: inputCategory,
-    instruction: inputInstruction,
+    strInstructions: inputInstruction,
     strArea: inputLocation,
     strMealThumb: inputImage,
   };
