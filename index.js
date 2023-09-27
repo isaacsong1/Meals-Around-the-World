@@ -1,5 +1,4 @@
-
-  //! Isaac W's Section
+//! Isaac W's Section
 // Global Variables
 const mealListDiv = document.querySelector("#meal-list");
 const mealInfoDiv = document.querySelector("#meal-info");
