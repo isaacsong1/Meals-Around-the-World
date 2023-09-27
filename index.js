@@ -46,32 +46,21 @@ const displayMealInfo = mealObj => {
   while (measurementsUl.firstChild) {
     measurementsUl.removeChild(measurementsUl.lastChild);
   }
-
+  
   while (ingredientsUl.firstChild) {
     ingredientsUl.removeChild(ingredientsUl.lastChild);
   }
-
+  
   const measurementsH3 = document.createElement("h3");
-  measurementsH3.textContent = "Measurements";
+  measurementsH3.textContent = "Measurements and Ingredients:";
   measurementsUl.append(measurementsH3);
-
+  
   for (let i in mealObj) {
     if (i.startsWith("strMeasure") && mealObj[i].trim() !== "") {
+      const ingredientIndex = i.replace("strMeasure", "strIngredient");
       const measurementsLi = document.createElement("li");
-      measurementsLi.textContent = mealObj[i];
+      measurementsLi.textContent = `${mealObj[i]} - ${mealObj[ingredientIndex]}`;
       measurementsUl.append(measurementsLi);
-    }
-  }
-
-  const ingredientsH3 = document.createElement("h3");
-  ingredientsH3.textContent = "Ingredients";
-  ingredientsUl.append(ingredientsH3);
-
-  for (let i in mealObj) {
-    if (i.startsWith("strIngredient") && mealObj[i] !== "") {
-      const ingredientsLi = document.createElement("li");
-      ingredientsLi.textContent = mealObj[i];
-      ingredientsUl.append(ingredientsLi);
     }
   }
 };
