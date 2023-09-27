@@ -17,13 +17,25 @@ const fetchData = () => {
   fetch(URL)
     .then(response => response.json())
     .then(mealArray => {
-      // console.log(mealArray.meals)
       const mealsArray = mealArray.meals;
-      mealsArray.forEach(mealObj => appendMealNameToNav(mealObj));
-      displayMealInfo(mealsArray[0]);
+
+      // Clear the mealListDiv
+      mealListDiv.innerHTML = '';
+
+      // Loop through the first 13 items or less
+      for (let i = 0; i < Math.min(13, mealsArray.length); i++) {
+        const mealObj = mealsArray[i];
+        appendMealNameToNav(mealObj);
+      }
+
+      // Display meal info for the first meal in the list
+      if (mealsArray.length > 0) {
+        displayMealInfo(mealsArray[0]);
+      }
     })
     .catch(error => alert(error));
 };
+
 
 const appendMealNameToNav = mealObj => {
   const mealLi = document.createElement("li");
