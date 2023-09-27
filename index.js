@@ -128,7 +128,7 @@ function closeForm() {
 
 //! Isaac S's Section
 // Global Variables
-const search = document.querySelector(".search-form-container");
+const search = document.querySelector("#search-form-container");
 
 // Helper Functions
 const updateNav = () => {
