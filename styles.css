@@ -54,7 +54,7 @@ button#close{
     color: white;
 }
 
-#form-container input {
+#form-container input, textarea {
     padding: 7%;
     margin: 1% 0 11% 0; /* top, right, bottom, left */
     border: none;
