@@ -89,17 +89,17 @@ const addMealToForm = e => {
   //Prevent the page from refreshing
   e.preventDefault();
   //Target HTML elements in the form with texts entered in the inputs
-  const inputName = e.target.name.value;
-  const inputCategory = e.target.category.value;
-  const inputInstruction = e.target.instruction.value;
-  const inputLocation = e.target.location.value;
-  const inputImage = e.target.image.value;
+  const inputName = e.target["new-name"].value;
+  const inputCategory = e.target["new-category"].value;
+  const inputInstruction = e.target["new-instruction"].value;
+  const inputLocation = e.target["new-location"].value;
+  const inputImage = e.target["new-image"].value;
 
   //Update/add inputs through HTML elements, which then is added to the database via properties.
   const newMeal = {
     strMeal: inputName,
     strCategory: inputCategory,
-    instruction: inputInstruction,
+    strInstructions: inputInstruction,
     strArea: inputLocation,
     strMealThumb: inputImage,
   };
