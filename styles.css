@@ -1,7 +1,10 @@
-* {
-    font-family: "Nunito Sans", sans-serif;
-}
+/* * {
+    font-family: 'Playfair Display', serif;
+} */
 
+html, body {
+    margin: 0;
+}
   /******************************** Form section starts ******************************** */
 #mealModal {
     display: none; /* Hidden by default */
@@ -18,13 +21,15 @@
 }
 
 button#open {
-    float: right;
-    margin-top: -1.5%;
+    /* float: right; */
+    /* margin-top: -1.5%; */
     background-color: rgb(140, 139, 139);
     color: white;
     font-size: 1.1em;
     border-radius: 5%;
     cursor: pointer;
+    width: 15vw;
+    height: 5vh;
 }
 
 button#submit{
@@ -65,11 +70,99 @@ button#close{
 
 /******************************** Form section ends ******************************** */
 
+/******************************** Header Section Start ***************************** */
+header {
+    background-color: #4CAF50;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+}
+
+#img-container {
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#logo {
+    width: 4vw;
+    height: 8vh;
+}
+
+#search-form-container {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+#meal {
+    width: 1vw;
+}
+
+
 /******************************** NavBar Section Start ***************************** */
 #meal-list {
-
+    font-family: 'Playfair Display', serif;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    margin: 0;
+    padding: 0;
 }
 
 #list-item {
+    background-color: #8BC34A;
     list-style-type: none;
+    flex-basis: 20%;
+    padding: 2vh 2vw 2vh 2vw;
+    justify-content: center;
+    text-align: center;
+}
+
+#list-item:hover {
+    background-color: #8BC34A;
+}
+
+/******************************** Main Section Start ******************************* */
+#main-container {
+    display: flex;
+    overflow-y: hidden;
+    height: 90vh;
+}
+
+#lists {
+    display: flex;
+}
+
+#lists li {
+    list-style-type: "- ";
+}
+
+#meal-image {
+    height: 15vh;
+    border-radius: 25px;
+}
+
+#meal-info {
+    background-color: #D9D9D9;
+    width: 90vw;
+    display: flex;
+}
+
+#left-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#right-container {
+    display: flex;
+    flex-direction: column;
+}
+
+h3, p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }

@@ -37,8 +37,8 @@ const displayMealInfo = mealObj => {
     mealNameH1.textContent = mealObj.strMeal;
     mealImageImg.src = mealObj.strMealThumb;
     mealImageImg.alt = mealObj.strMeal;
-    mealCategoryH3.textContent = mealObj.strCategory;
-    mealAreaH3.textContent = mealObj.strArea;
+    mealCategoryH3.textContent = `Category: ${mealObj.strCategory}`;
+    mealAreaH3.textContent = `Country: ${mealObj.strArea}`;
     // mealVideoA.href = mealObj.strYoutube;
     // mealVideoA.textContent = "YouTube Link";
     mealInstructionP.textContent = mealObj.strInstructions;
