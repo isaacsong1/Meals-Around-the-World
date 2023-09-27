@@ -1,7 +1,3 @@
-/* * {
-    font-family: 'Playfair Display', serif;
-} */
-
 html, body {
     margin: 0;
 }
@@ -124,8 +120,6 @@ header {
 
 
 button#open {
-    /* float: right; */
-    /* margin-top: -1.5%; */
     background-color: rgb(74, 126, 76);
     color: white;
     font-size: 1.1em;
@@ -143,7 +137,6 @@ button#open {
     width: 10vw;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     margin: 0;
     padding: 0;
 }
@@ -180,8 +173,6 @@ button#open {
     border-radius: 16px;
     height: 100%;
     width: 100%;
-    /* box-shadow:  21px 21px 42px #b8b8b8,
-                -21px -21px 42px #fafafa; */
     margin-bottom: 10px;
 }
 
@@ -225,8 +216,6 @@ button#open {
     justify-content: center;
     border-radius: 16px;
     background: #e9e9e98f;
-    /* box-shadow:  21px 21px 42px #b8b8b8,
-                -21px -21px 42px #fafafa; */
     height: 50%;
 }
 
@@ -248,8 +237,6 @@ button#open {
 #description {
     border-radius: 16px;
     background: #e9e9e98f;
-    /* box-shadow:  21px 21px 42px #b8b8b8,
-                -21px -21px 42px #fafafa; */
     padding: 10px;
     font-size: 15px;
     text-align: center;
