@@ -1,4 +1,5 @@
-//! Isaac W's Section
+
+  //! Isaac W's Section
 // Global Variables
 const mealListDiv = document.querySelector("#meal-list");
 const mealInfoDiv = document.querySelector("#meal-info");
@@ -17,10 +18,21 @@ const fetchData = () => {
   fetch(URL)
     .then(response => response.json())
     .then(mealArray => {
-      // console.log(mealArray.meals)
       const mealsArray = mealArray.meals;
-      mealsArray.forEach(mealObj => appendMealNameToNav(mealObj));
-      displayMealInfo(mealsArray[0]);
+
+      // Clear the mealListDiv
+      mealListDiv.innerHTML = '';
+
+      // Loop through the first 13 items or less
+      for (let i = 0; i < Math.min(13, mealsArray.length); i++) {
+        const mealObj = mealsArray[i];
+        appendMealNameToNav(mealObj);
+      }
+
+      // Display meal info for the first meal in the list
+      if (mealsArray.length > 0) {
+        displayMealInfo(mealsArray[0]);
+      }
     })
     .catch(error => alert(error));
 };
@@ -45,35 +57,25 @@ const displayMealInfo = mealObj => {
   while (measurementsUl.firstChild) {
     measurementsUl.removeChild(measurementsUl.lastChild);
   }
-
+  
   while (ingredientsUl.firstChild) {
     ingredientsUl.removeChild(ingredientsUl.lastChild);
   }
-
+  
   const measurementsH3 = document.createElement("h3");
-  measurementsH3.textContent = "Measurements:";
+  measurementsH3.textContent = "Measurements and Ingredients:";
   measurementsUl.append(measurementsH3);
-
+  
   for (let i in mealObj) {
     if (i.startsWith("strMeasure") && mealObj[i].trim() !== "") {
+      const ingredientIndex = i.replace("strMeasure", "strIngredient");
       const measurementsLi = document.createElement("li");
-      measurementsLi.textContent = mealObj[i];
+      measurementsLi.textContent = `${mealObj[i]} - ${mealObj[ingredientIndex]}`;
       measurementsUl.append(measurementsLi);
     }
   }
-
-  const ingredientsH3 = document.createElement("h3");
-  ingredientsH3.textContent = "Ingredients:";
-  ingredientsUl.append(ingredientsH3);
-
-  for (let i in mealObj) {
-    if (i.startsWith("strIngredient") && mealObj[i] !== "") {
-      const ingredientsLi = document.createElement("li");
-      ingredientsLi.textContent = mealObj[i];
-      ingredientsUl.append(ingredientsLi);
-    }
-  }
 };
+
 
 // Execute Code
 fetchData();
