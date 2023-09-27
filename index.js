@@ -52,7 +52,7 @@ const displayMealInfo = mealObj => {
     }
 
     const measurementsH3 = document.createElement("h3");
-    measurementsH3.textContent = "Measurements:";
+    measurementsH3.textContent = "Measurements";
     measurementsUl.append(measurementsH3);
 
     for (let i in mealObj) {
@@ -64,7 +64,7 @@ const displayMealInfo = mealObj => {
     }
 
     const ingredientsH3 = document.createElement("h3");
-    ingredientsH3.textContent = "Ingredients:";
+    ingredientsH3.textContent = "Ingredients";
     ingredientsUl.append(ingredientsH3);
 
     for (let i in mealObj) {
