@@ -50,6 +50,8 @@ button#close{
 #form-container h2 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
+    font-size: 1.7em;
+    color: white;
 }
 
 #form-container input {
@@ -62,12 +64,6 @@ button#close{
     height: 1vh;
     font-family: 'Roboto', sans-serif;
 }
-
-#form-container h2{
-    font-size: 1.7em;
-    color: white;
-}
-
 /******************************** Form section ends ******************************** */
 
 /******************************** Header Section Start ***************************** */
