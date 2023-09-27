@@ -76,6 +76,15 @@ const displayMealInfo = mealObj => {
   }
 };
 
+const displayRandomMeal = () => {
+  const randomURL = 'https://www.themealdb.com/api/json/v1/1/random.php'
+  fetch(randomURL)
+  .then(response => response.json())
+  .then(mealArray => {
+    const mealsArray = mealArray.meals;
+    displayMealInfo(mealsArray[0]);
+  })
+};
 
 // Execute Code
 fetchData();
