@@ -14,65 +14,66 @@ const measurementsUl = document.querySelector("#measurement-list");
 
 // Helper Functions
 const fetchData = () => {
-  fetch(URL)
+    fetch(URL)
     .then(response => response.json())
     .then(mealArray => {
       // console.log(mealArray.meals)
-      const mealsArray = mealArray.meals;
-      mealsArray.forEach(mealObj => appendMealNameToNav(mealObj));
-      displayMealInfo(mealsArray[0]);
+    const mealsArray = mealArray.meals;
+    mealsArray.forEach(mealObj => appendMealNameToNav(mealObj));
+    displayMealInfo(mealsArray[0]);
     })
     .catch(error => alert(error));
 };
 
 const appendMealNameToNav = mealObj => {
-  const mealLi = document.createElement("li");
-  mealLi.textContent = mealObj.strMeal;
-  mealLi.addEventListener("click", () => displayMealInfo(mealObj));
-  mealListDiv.append(mealLi);
+    const mealLi = document.createElement("li");
+    mealLi.textContent = mealObj.strMeal;
+    mealLi.id = 'list-item';
+    mealLi.addEventListener("click", () => displayMealInfo(mealObj));
+    mealListDiv.append(mealLi);
 };
 
 const displayMealInfo = mealObj => {
-  mealNameH1.textContent = mealObj.strMeal;
-  mealImageImg.src = mealObj.strMealThumb;
-  mealImageImg.alt = mealObj.strMeal;
-  mealCategoryH3.textContent = mealObj.strCategory;
-  mealAreaH3.textContent = mealObj.strArea;
-  mealVideoA.href = mealObj.strYoutube;
-  mealVideoA.textContent = "YouTube Link";
-  mealInstructionP.textContent = mealObj.strInstructions;
+    mealNameH1.textContent = mealObj.strMeal;
+    mealImageImg.src = mealObj.strMealThumb;
+    mealImageImg.alt = mealObj.strMeal;
+    mealCategoryH3.textContent = mealObj.strCategory;
+    mealAreaH3.textContent = mealObj.strArea;
+    // mealVideoA.href = mealObj.strYoutube;
+    // mealVideoA.textContent = "YouTube Link";
+    mealInstructionP.textContent = mealObj.strInstructions;
 
-  while (measurementsUl.firstChild) {
-    measurementsUl.removeChild(measurementsUl.lastChild);
-  }
-
-  while (ingredientsUl.firstChild) {
-    ingredientsUl.removeChild(ingredientsUl.lastChild);
-  }
-
-  const measurementsH3 = document.createElement("h3");
-  measurementsH3.textContent = "Measurements:";
-  measurementsUl.append(measurementsH3);
-
-  for (let i in mealObj) {
-    if (i.startsWith("strMeasure") && mealObj[i].trim() !== "") {
-      const measurementsLi = document.createElement("li");
-      measurementsLi.textContent = mealObj[i];
-      measurementsUl.append(measurementsLi);
+    while (measurementsUl.firstChild) {
+        measurementsUl.removeChild(measurementsUl.lastChild);
     }
-  }
 
-  const ingredientsH3 = document.createElement("h3");
-  ingredientsH3.textContent = "Ingredients:";
-  ingredientsUl.append(ingredientsH3);
-
-  for (let i in mealObj) {
-    if (i.startsWith("strIngredient") && mealObj[i] !== "") {
-      const ingredientsLi = document.createElement("li");
-      ingredientsLi.textContent = mealObj[i];
-      ingredientsUl.append(ingredientsLi);
+    while (ingredientsUl.firstChild) {
+        ingredientsUl.removeChild(ingredientsUl.lastChild);
     }
-  }
+
+    const measurementsH3 = document.createElement("h3");
+    measurementsH3.textContent = "Measurements:";
+    measurementsUl.append(measurementsH3);
+
+    for (let i in mealObj) {
+        if (i.startsWith("strMeasure") && mealObj[i].trim() !== "") {
+            const measurementsLi = document.createElement("li");
+            measurementsLi.textContent = mealObj[i];
+            measurementsUl.append(measurementsLi);
+        }
+    }
+
+    const ingredientsH3 = document.createElement("h3");
+    ingredientsH3.textContent = "Ingredients:";
+    ingredientsUl.append(ingredientsH3);
+
+    for (let i in mealObj) {
+        if (i.startsWith("strIngredient") && mealObj[i] !== "") {
+            const ingredientsLi = document.createElement("li");
+            ingredientsLi.textContent = mealObj[i];
+            ingredientsUl.append(ingredientsLi);
+        }
+    }
 };
 
 // Execute Code
@@ -87,42 +88,42 @@ const modal = document.querySelector("#mealModal");
 
 const addMealToForm = e => {
   //Prevent the page from refreshing
-  e.preventDefault();
+    e.preventDefault();
   //Target HTML elements in the form with texts entered in the inputs
-  const inputName = e.target.name.value;
-  const inputCategory = e.target.category.value;
-  const inputInstruction = e.target.instruction.value;
-  const inputLocation = e.target.location.value;
-  const inputImage = e.target.image.value;
+    const inputName = e.target.name.value;
+    const inputCategory = e.target.category.value;
+    const inputInstruction = e.target.instruction.value;
+    const inputLocation = e.target.location.value;
+    const inputImage = e.target.image.value;
 
   //Update/add inputs through HTML elements, which then is added to the database via properties.
-  const newMeal = {
-    strMeal: inputName,
-    strCategory: inputCategory,
-    instruction: inputInstruction,
-    strArea: inputLocation,
-    strMealThumb: inputImage,
-  };
+    const newMeal = {
+        strMeal: inputName,
+        strCategory: inputCategory,
+        instruction: inputInstruction,
+        strArea: inputLocation,
+        strMealThumb: inputImage,
+    };
 
   //Invoke the function to get new meal on the browser
-  displayMealInfo(newMeal);
+    displayMealInfo(newMeal);   
   //Invoke the function to get new meal to the list
-  appendMealNameToNav(newMeal);
+    appendMealNameToNav(newMeal);
   //Reset the form
-  e.target.reset();
+    e.target.reset();
 };
 //Invoke the function when the form is submitted
 mealForm.addEventListener("submit", addMealToForm);
 
-////For the modal
+//For the modal
 //To open the modal
 function openForm() {
-  modal.style.display = "block";
+    modal.style.display = "block";
 }
 
 //To close the modal
 function closeForm() {
-  modal.style.display = "none";
+    modal.style.display = "none";
 }
 
 //! Isaac S's Section
@@ -131,9 +132,9 @@ const search = document.querySelector(".search-form-container");
 
 // Helper Functions
 const updateNav = () => {
-  while (mealListDiv.firstChild) {
-    mealListDiv.removeChild(mealListDiv.lastChild);
-  }
+    while (mealListDiv.firstChild) {
+        mealListDiv.removeChild(mealListDiv.lastChild);
+    }
 };
 
 // Get e.target.value
@@ -141,15 +142,15 @@ const updateNav = () => {
 // Remove elements in navbar
 // Populate navbar with elements from search query
 const searchByName = e => {
-  fetch(`${URL}${e.target.value}`)
+    fetch(`${URL}${e.target.value}`)
     .then(resp => resp.json())
     .then(mealArr => {
-      updateNav();
-      if (mealArr) {
+        updateNav();
+        if (mealArr) {
         mealArr.meals.forEach(meal => appendMealNameToNav(meal));
-      } else {
+        } else {
         alert("No meals exist with that name");
-      }
+        }
     });
 };
 

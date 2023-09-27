@@ -1,0 +1,75 @@
+* {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+  /******************************** Form section starts ******************************** */
+#mealModal {
+    display: none; /* Hidden by default */
+    width: 13%;
+    padding: 0 5%;
+    border:2px solid;
+    border-radius: 1.3%;
+    position: absolute;
+    top: 25%;
+    left: 43%;
+    background-color: #505869;
+    justify-content: center;
+    text-align: center;
+}
+
+button#open {
+    float: right;
+    margin-top: -1.5%;
+    background-color: rgb(140, 139, 139);
+    color: white;
+    font-size: 1.1em;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+button#submit{
+    border: none;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 5%;
+    font-size: 1em;
+}
+
+button#close{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    padding: 3%;
+    margin-top: 2%;
+    background-color: #474e5d;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;    
+}
+
+#form-container input {
+    padding: 7%;
+    margin: 1% 0 11% 0; /* top, right, bottom, left */
+    border: none;
+    background: #f1f1f1;
+    width: 92%;
+    font-size: .92em;
+}
+
+#form-container h2{
+    font-size: 1.7em;
+    color: white;
+}
+
+/******************************** Form section ends ******************************** */
+
+/******************************** NavBar Section Start ***************************** */
+#meal-list {
+
+}
+
+#list-item {
+    list-style-type: none;
+}
