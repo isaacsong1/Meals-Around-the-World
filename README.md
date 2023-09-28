@@ -20,11 +20,11 @@ The developers created a project, Meals Around the World, using HTML, CSS, API, 
 
 #### 1. Fork this repository
 
-![Alt text](/image/image.png)
+![Alt text](/images/image.png)
 
 #### 2. Clone from SSH
 
-![Alt text](/image/image-1.png)
+![Alt text](/images/image-1.png)
 
 ```shell
  git clone git@github.com:isaacsong1/Meals-Around-the-World.git
