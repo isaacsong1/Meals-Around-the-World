@@ -5,7 +5,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-image: url(./images/culture.jpeg)
+    background-image: url(./images/culture.jpeg);
 }
   /******************************** Form section starts ******************************** */
 #mealModal {
@@ -22,9 +22,7 @@ body {
     text-align: center;
 }
 
-button#open, button#random-meal {
-    /*     background-color: rgb(74, 126, 76);
-     */    
+button#open, button#random-meal {  
         background-color: darkgray;
         color: white;
         cursor: pointer;
@@ -53,7 +51,6 @@ button#close{
     top: 0;
     right: 2%;
     padding: 3%;
-    margin-top: 2%;
     background-color: #5f5d5d;
     font-size: 1em;
     color: white;
@@ -100,13 +97,6 @@ header {
     padding-left: 1vw;
 }
 
-#img-container {
-    width: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
-
 #logo {
     width: 4vw;
     height: 8vh;
@@ -132,7 +122,7 @@ header {
 
 /******************************** NavBar Section Start ***************************** */
 nav {
-    background-color: #8BC34A; 
+    background-color: #8BC34A;
 }
 
 #meal-list {
@@ -145,7 +135,7 @@ nav {
 }
 
 #list-item {
-    background-color: #8BC34A; 
+    background-color: #8BC34A;
     list-style-type: none;
     flex-basis: 20%;
     padding: 2vh 2vw 2vh 2vw;
@@ -162,26 +152,24 @@ nav {
     display: flex;
     overflow-y: hidden;
     height: 90vh;
-    
 }
 
 #wrapper {
     width:80%;
-    margin:5px auto;
+    margin:0 auto;
     display:block;
   }
 
-#img-center {
-    height: 65%;
+#img-container {
+    width: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
 
 #meal-image {
     border-radius: 16px;
-    height: 100%;
-    margin-bottom: 10px;
+    background-color: #8BC34A;
 }
 
 #meal-info {
@@ -194,16 +182,14 @@ nav {
     flex-direction: column;
     width: 34vw;
     padding: 2.5px;
-    background-color: #8BC34A; 
+    background-color: #8BC34A;
 }
 
 #right-container {
-    display: flex;
-    flex-direction: column;
     width: 35vw;
     padding: 2.5px;
     justify-content: center;
-    background-color: #8BC34A; 
+    background-color: #8BC34A;
 }
 
 #text-details {
@@ -214,25 +200,25 @@ nav {
 } 
 
 #meal-name {
-    font-size: 125px;
+    font-size: 4.5em;
+    overflow-x: hidden;
+    color:darkred;
+    word-wrap: break-word;
 }
 
 #lists {
-    display: flex;
-    justify-content: center;
     border-radius: 16px;
     background: #e9e9e98f;
-    height: 50%;
+    margin-bottom: 5px;
     overflow: scroll;
+    margin-top: 0;
+    height: 25vw;
+    font-size:1.05em;
 }
 
 #lists li {
     list-style-type: "- ";
 }
-
-#measurement-list{
-    margin:0;
-  }
 
 #lists h3 {
     font-family: 'Playfair Display', serif;
@@ -246,11 +232,14 @@ nav {
 #description {
     border-radius: 16px;
     background: #e9e9e98f;
-    padding: 10px;
+    padding: 2.5px;
+    width: 35vw;
     font-size: 15px;
-    text-align: center;
-    height: 35%;
-    overflow: scroll;
+    overflow-y: scroll;
+    height: 25vw;
+    font-size:1.05em;
+    padding:8px;
+    line-height:25px;
 }
 
 #meal-instructions {
