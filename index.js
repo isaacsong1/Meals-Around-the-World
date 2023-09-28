@@ -1,3 +1,21 @@
+//! Hanna's Section
+//Form to add meal
+
+//Global variable
+const mealForm = document.querySelector("#form-container");
+const modal = document.querySelector("#mealModal");
+
+//For the modal
+//To open the modal
+function openForm() {
+  modal.style.display = "block";
+}
+
+//To close the modal
+function closeForm() {
+  modal.style.display = "none";
+}
+
 //! Isaac W's Section
 // Global Variables
 const mealListDiv = document.querySelector("#meal-list");
@@ -83,64 +101,58 @@ const displayRandomMeal = () => {
   })
 };
 
-const addMealToFormPersist = () => {
-  // build new meal object from form inputs
-  const inputName = document.querySelector(["#new-name"]).value;
-  const inputCategory = document.querySelector(["#new-category"]).value;
-  const inputInstruction = document.querySelector(["#new-instruction"]).value;
-  const inputLocation = document.querySelector(["#new-location"]).value;
-  const inputImage = document.querySelector(["#new-image"]).value;
-
-  const newMeal = {
-    strMeal: inputName,
-    strCategory: inputCategory,
-    strInstructions: inputInstruction,
-    strArea: inputLocation,
-    strMealThumb: inputImage,
-  };
-
   // POST new meal to db
-  fetch(localURL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(newMeal),
+  const addMealToFormPersist = () => {
+    // build new meal object from form inputs
+    const inputName = document.querySelector("#new-name").value;
+    const inputCategory = document.querySelector("#new-category").value;
+    const inputInstruction = document.querySelector("#new-instruction").value;
+    const inputLocation = document.querySelector("#new-location").value;
+    const inputImage = document.querySelector("#new-image").value;
+  
+    const newMeal = {
+      strMeal: inputName,
+      strCategory: inputCategory,
+      strInstructions: inputInstruction,
+      strArea: inputLocation,
+      strMealThumb: inputImage,
+    };
+  
+    // POST new meal to db
+    fetch(localURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newMeal),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to add meal. Check your server.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log("Meal added successfully:", data);
+        
+        displayMealInfo(newMeal);
+        appendMealNameToNav(newMeal);
+      })
+      .catch(error => {
+        console.error("Error adding meal:", error);
+        // Handle errors or show an error message to the user
+      });
+  };
+  
+  // Execute Code
+  fetchData();
+  
+  mealForm.addEventListener("submit", e => {
+    e.preventDefault();
+    addMealToFormPersist();
+    e.target.reset();
   });
 
-  //Invoke the function to add new meal
-  displayMealInfo(newMeal);
-  //Invoke the function to display the details of the new meal
-  appendMealNameToNav(newMeal);
-};
-
-// Execute Code
-fetchData();
-
-mealForm.addEventListener("submit", e => {
-  e.preventDefault();
-  addMealToFormPersist();
-  e.target.reset();
-});
-
-//! Hanna's Section
-//Form to add meal
-
-//Global variable
-const mealForm = document.querySelector("#form-container");
-const modal = document.querySelector("#mealModal");
-
-//For the modal
-//To open the modal
-function openForm() {
-  modal.style.display = "block";
-}
-
-//To close the modal
-function closeForm() {
-  modal.style.display = "none";
-}
 
 //! Isaac S's Section
 // Global Variables
@@ -171,4 +183,4 @@ const searchByName = e => {
 };
 
 // Execute
-search.addEventListener("change", searchByName);
+search.addEventListener("change", searchByName)
