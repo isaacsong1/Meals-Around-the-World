@@ -8,7 +8,7 @@ const mealInstructionP = document.querySelector("#meal-instructions");
 const mealImageImg = document.querySelector("#meal-image");
 const mealVideoA = document.querySelector("#meal-video");
 const mealAreaH3 = document.querySelector("#meal-area");
-const URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+const URL = "http://localhost:8000/meals";
 const ingredientsUl = document.querySelector("#ingredients-list");
 const measurementsUl = document.querySelector("#measurement-list");
 
