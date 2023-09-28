@@ -1,14 +1,14 @@
-# Meals Around the World Project
+# Meals Around the World
 
-The developers created a project, Meals Around the World, using HTML, CSS, API, and JavaScript. This web app uses TheMealDB to fetch all meal data from its [API](https://www.themealdb.com/api/json/v1/1/search.php?s=). TheMealDB API is an open database focusing on recipes from around the world. This web app is intended for people to access the list of meals from different countries. The users can click on a meal to see the list of meals that displays the name of the meal, its image, what category it is, where it came from, how to make it, its measurements, and more. Furthermore, the web app allows users to type on a search tab to search for a specific meal list. There is a form for a user to input to add a meal with information that is added to the list of meals.
+Welcome to Meals Around the World. Meals Around the World is a single-page JavaScript web application that uses TheMealDB to fetch meal recipes from its [API](https://www.themealdb.com/api/json/v1/1/search.php?s=). TheMealDB API is an open database focusing on recipes from around the world. This web app is intended for people to access the list of meals from different countries. The users can click on a meal to see the list of meals that displays the name of the meal, its image, what category it is, where it came from, how to make it, its measurements, and more. Furthermore, the web app allows users to type on a search tab to search for a specific meal list. There is a form for a user to input to add a meal with information that is added to the list of meals.
 
 **Note**: Adding a meal is not persistent, so refreshing the browser will lose the meal the users added.
 
 #### Project Developers:
 
-- [Isaac Wilhite](https://github.com/isaacwilhite)
-- [Isaac Song](https://github.com/isaacsong1)
 - [Hanna Negash](https://github.com/Hanna-N9)
+- [Isaac Song](https://github.com/isaacsong1)
+- [Isaac Wilhite](https://github.com/isaacwilhite)
 
 ---
 
