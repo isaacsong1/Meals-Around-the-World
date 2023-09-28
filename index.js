@@ -8,30 +8,26 @@ const mealInstructionP = document.querySelector("#meal-instructions");
 const mealImageImg = document.querySelector("#meal-image");
 const mealVideoA = document.querySelector("#meal-video");
 const mealAreaH3 = document.querySelector("#meal-area");
-const URL = "http://localhost:8000/meals";
+const URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+const localURL = 'http://localhost:8000/meals'
 const ingredientsUl = document.querySelector("#ingredients-list");
 const measurementsUl = document.querySelector("#measurement-list");
 
 // Helper Functions
 const fetchData = () => {
-  fetch(URL)
+  fetch(localURL)
     .then(response => response.json())
     .then(mealArray => {
-      const mealsArray = mealArray.meals;
 
       // Clear the mealListDiv
       mealListDiv.innerHTML = '';
 
-      // Loop through the first 13 items or less
-      for (let i = 0; i < Math.min(13, mealsArray.length); i++) {
-        const mealObj = mealsArray[i];
-        appendMealNameToNav(mealObj);
-      }
-
+      // Append to Nav bar
+      
+      mealArray.forEach(mealObj => appendMealNameToNav(mealObj));
+      
       // Display meal info for the first meal in the list
-      if (mealsArray.length > 0) {
-        displayMealInfo(mealsArray[0]);
-      }
+      displayMealInfo(mealArray[0])
     })
     .catch(error => alert(error));
 };
@@ -87,27 +83,14 @@ const displayRandomMeal = () => {
   })
 };
 
-// Execute Code
-fetchData();
+const addMealToFormPersist = () => {
+  // build new meal object from form inputs
+  const inputName = document.querySelector(["#new-name"]).value;
+  const inputCategory = document.querySelector(["#new-category"]).value;
+  const inputInstruction = document.querySelector(["#new-instruction"]).value;
+  const inputLocation = document.querySelector(["#new-location"]).value;
+  const inputImage = document.querySelector(["#new-image"]).value;
 
-//! Hanna's Section
-//Form to add meal
-
-//Global variable
-const mealForm = document.querySelector("#form-container");
-const modal = document.querySelector("#mealModal");
-
-const addMealToForm = e => {
-  //Prevent the page from refreshing
-  e.preventDefault();
-  //Target HTML elements in the form with texts entered in the inputs
-  const inputName = e.target["new-name"].value;
-  const inputCategory = e.target["new-category"].value;
-  const inputInstruction = e.target["new-instruction"].value;
-  const inputLocation = e.target["new-location"].value;
-  const inputImage = e.target["new-image"].value;
-
-  //Update/add inputs through HTML elements, which then is added to the database via properties.
   const newMeal = {
     strMeal: inputName,
     strCategory: inputCategory,
@@ -116,15 +99,37 @@ const addMealToForm = e => {
     strMealThumb: inputImage,
   };
 
-  //Invoke the function to get new meal on the browser
+  // POST new meal to db
+  fetch(localURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(newMeal),
+  });
+
+  //Invoke the function to add new meal
   displayMealInfo(newMeal);
-  //Invoke the function to get new meal to the list
+  //Invoke the function to display the details of the new meal
   appendMealNameToNav(newMeal);
-  //Reset the form
-  e.target.reset();
 };
-//Invoke the function when the form is submitted
-mealForm.addEventListener("submit", addMealToForm);
+
+// Execute Code
+fetchData();
+
+mealForm.addEventListener("submit", e => {
+  e.preventDefault();
+  addMealToFormPersist();
+  e.target.reset();
+});
+
+//! Hanna's Section
+//Form to add meal
+
+//Global variable
+const mealForm = document.querySelector("#form-container");
+const modal = document.querySelector("#mealModal");
 
 //For the modal
 //To open the modal
