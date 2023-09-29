@@ -42,7 +42,11 @@ const fetchData = () => {
 
       // Append to Nav bar
       
-      mealArray.forEach(mealObj => appendMealNameToNav(mealObj));
+      mealArray.forEach(mealObj => {
+        if (mealObj) {
+          appendMealNameToNav(mealObj)
+        }
+      });
       
       // Display meal info for the first meal in the list
       displayMealInfo(mealArray[0])
@@ -214,10 +218,11 @@ const searchByName = e => {
     .then(resp => resp.json())
     .then(mealArr => {
       updateNav();
-      if (mealArr) {
+      if (mealArr.meals.length) {
         mealArr.meals.forEach(meal => appendMealNameToNav(meal));
       } else {
-        alert("No meals exist with that name");
+        fetchData();
+        alert("No meals exist with that name")
       }
     });
 };
