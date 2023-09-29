@@ -109,6 +109,26 @@ const displayRandomMeal = () => {
     const inputInstruction = document.querySelector("#new-instruction").value;
     const inputLocation = document.querySelector("#new-location").value;
     const inputImage = document.querySelector("#new-image").value;
+    const measurement1 = document.querySelector('#new-measurements1').value;
+    const measurement2 = document.querySelector('#new-measurements2').value;
+    const measurement3 = document.querySelector('#new-measurements3').value;
+    const measurement4 = document.querySelector('#new-measurements4').value;
+    const measurement5 = document.querySelector('#new-measurements5').value;
+    const measurement6 = document.querySelector('#new-measurements6').value;
+    const measurement7 = document.querySelector('#new-measurements7').value;
+    const measurement8 = document.querySelector('#new-measurements8').value;
+    const measurement9 = document.querySelector('#new-measurements9').value;
+    const measurement10 = document.querySelector('#new-measurements10').value;
+    const ingredient1 = document.querySelector('#new-ingredients1').value;
+    const ingredient2 = document.querySelector('#new-ingredients2').value;
+    const ingredient3 = document.querySelector('#new-ingredients3').value;
+    const ingredient4 = document.querySelector('#new-ingredients4').value;
+    const ingredient5 = document.querySelector('#new-ingredients5').value;
+    const ingredient6 = document.querySelector('#new-ingredients6').value;
+    const ingredient7 = document.querySelector('#new-ingredients7').value;
+    const ingredient8 = document.querySelector('#new-ingredients8').value;
+    const ingredient9 = document.querySelector('#new-ingredients9').value;
+    const ingredient10 = document.querySelector('#new-ingredients10').value;
   
     const newMeal = {
       strMeal: inputName,
@@ -116,6 +136,26 @@ const displayRandomMeal = () => {
       strInstructions: inputInstruction,
       strArea: inputLocation,
       strMealThumb: inputImage,
+      strIngredient1: ingredient1,
+      strIngredient2: ingredient2,
+      strIngredient3: ingredient3,
+      strIngredient4: ingredient4,
+      strIngredient5: ingredient5,
+      strIngredient6: ingredient6,
+      strIngredient7: ingredient7,
+      strIngredient8: ingredient8,
+      strIngredient9: ingredient9,
+      strIngredient10: ingredient10,
+      strMeasure1: measurement1,
+      strMeasure2: measurement2,
+      strMeasure3: measurement3,
+      strMeasure4: measurement4,
+      strMeasure5: measurement5,
+      strMeasure6: measurement6,
+      strMeasure7: measurement7,
+      strMeasure8: measurement8,
+      strMeasure9: measurement9,
+      strMeasure10: measurement10,
     };
   
     // POST new meal to db
