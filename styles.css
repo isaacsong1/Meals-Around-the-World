@@ -5,7 +5,8 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    background-image: url(./images/culture.jpeg)
+    background-image: url(./images/culture.jpeg);
+    overflow: hidden;
 }
   /******************************** Form section starts ******************************** */
 #mealModal {
@@ -23,19 +24,17 @@ body {
 }
 
 button#open, button#random-meal {
-    /*     background-color: rgb(74, 126, 76);
-     */    
-        background-color: darkgray;
-        color: white;
-        cursor: pointer;
-        margin-right: 1vw;
-        font-size: .9em;
-        border-radius: 5%;
-    }
+    background-color: darkgray;
+    color: white;
+    cursor: pointer;
+    margin-right: 1vw;
+    font-size: .9em;
+    border-radius: 5%;
+}
     
-    button#open{
-      background-color: gray;
-    }
+button#open{
+    background-color: gray;
+}
 
 button#submit{
     border: none;
@@ -107,21 +106,18 @@ button#close{
     height: 3vh;
     padding: 0;
 }
-
-
-
-
-
 /******************************** Form section ends ******************************** */
 
 /******************************** Header Section Start ***************************** */
 header {
     /* background-color: #4CAF50; */
-    background-color:beige;
+    background-color:rgb(255, 225, 142);
     height: 10vh;
+    width: 79.5vw;
     display: flex;
     align-items: center;
     font-family: 'Playfair Display', serif;
+    margin: 0;
 }
 
 #page-title {
@@ -151,7 +147,6 @@ header {
     justify-content: center;
     font-weight: bold;
     font-size: 18px;
-    
 }
 
 #form-control {
@@ -165,20 +160,40 @@ header {
 
 /******************************** NavBar Section Start ***************************** */
 nav {
-    background-color: #8BC34A; 
+    height: 80%;
+    width: 12.5%;
 }
 
 #meal-list {
     font-family: 'Playfair Display', serif;
     width: 10vw;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
 }
 
+#meal-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+#meal-list::-webkit-scrollbar-track {
+    background: rgb(255, 245, 159); 
+} 
+
+#meal-list::-webkit-scrollbar-thumb {
+    background: #ffd069; 
+    border-radius: 5%;
+}
+
+#meal-list::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+} 
+
 #list-item {
-    background-color: #8BC34A; 
+    background-color: rgb(255, 245, 159); 
     list-style-type: none;
     flex-basis: 20%;
     padding: 2vh 2vw 2vh 2vw;
@@ -195,17 +210,21 @@ nav {
     display: flex;
     overflow-y: hidden;
     height: 90vh;
-    
 }
 
 #wrapper {
     width:80%;
-    margin:5px auto;
-    display:block;
+    height: 100vh;
+    /* margin:5px auto; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-left: 10.5vw;
 }
 
 #img-center {
-    height: 65%;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,7 +237,7 @@ nav {
 }
 
 #meal-info {
-    width: 90vw;
+    width: 90%;
     display: flex;
 }
 
@@ -226,37 +245,43 @@ nav {
     display: flex;
     flex-direction: column;
     width: 34vw;
+    height: 90vh;
     padding: 2.5px;
-    background-color: #8BC34A; 
+    background-color: rgb(255, 245, 159); 
 }
 
 #right-container {
     display: flex;
     flex-direction: column;
     width: 35vw;
+    height: 90vh;
     padding: 2.5px;
     justify-content: center;
-    background-color: #8BC34A; 
+    background-color: rgb(255, 245, 159); 
 }
 
 #text-details {
     text-align: center;
-    background-color: #e9e9e98f;
+    background-color: rgba(255, 252, 226, 0.644);
     border-radius: 16px;
     margin-bottom: 5px;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
 } 
 
 #meal-name {
-    font-size: 125px;
+    font-size: 60px;
 }
 
 #lists {
     display: flex;
     justify-content: center;
     border-radius: 16px;
-    background: #e9e9e98f;
+    background: rgba(255, 252, 226, 0.644);
     height: 50%;
-    overflow: scroll;
 }
 
 #lists li {
@@ -265,7 +290,7 @@ nav {
 
 #measurement-list{
     margin:0;
-  }
+}
 
 #lists h3 {
     font-family: 'Playfair Display', serif;
@@ -273,18 +298,35 @@ nav {
     border-bottom: 1px black solid;
     text-align: center;
     margin-right: 5%;
-
 }
 
 #description {
     border-radius: 16px;
-    background: #e9e9e98f;
+    background: rgba(255, 252, 226, 0.644);
     padding: 10px;
     font-size: 15px;
     text-align: center;
-    height: 35%;
-    overflow: scroll;
+    margin-top: 0.5vh;
+    height: 47%;
+    overflow-y: scroll;
 }
+
+#description::-webkit-scrollbar {
+    width: 10px;
+}
+
+#description::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+} 
+
+#description::-webkit-scrollbar-thumb {
+    background: #ffd069; 
+    border-radius: 5%;
+}
+
+#description::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+} 
 
 #meal-instructions {
     margin: 0 10px 0 10px;;

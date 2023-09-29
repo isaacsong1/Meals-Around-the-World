@@ -12,104 +12,101 @@
 </head>
 <body>
     <div id="wrapper">
-    <header>
-        <div id="img-container">
-            <img id="logo" src="./images/dinner.png" alt="logo">
-        </div>
-        <div id="page-title">
-            <h1>Meals Around the World</h1>
-        </div>
-        <div id="search-form-container">
-            <!-- <form action="" class="search-form"> -->
-            <div class="form-control">
-                <label id="label" form="meal">Search by Meal Name:</label>
-                <input type="text" name="meal" id="meal">
+        <header>
+            <div id="img-container">
+                <img id="logo" src="./images/dinner.png" alt="logo">
             </div>
-            <!-- </form> -->
-        </div>
-        <button id="random-meal" onclick="displayRandomMeal()">Random Meal</button>
-        <button id="open" onclick="openForm()">Open to Add Meal</button>
-        <div id="mealModal">
-            <form  id="form-container">
-                <h2>Add Meal</h2>
-                <div id="inputs">
-                    <div id="meal-input">
-                        
-
-                        <input id="new-name" type="text" name="name" placeholder=" Enter a meal name"/>
-
-                        <input id="new-category" type="text" name="category"  placeholder=" Enter meal's category"/>
-
-                        <input id="new-location" type="text" name="location" placeholder=" Enter meal's destination"/>
-
-                        <input id="new-image" type="text"  placeholder=" Enter a meal's image URL"/>
-
-                        
-                        <textarea id="new-instruction" placeholder=" Enter a meal's recipe"></textarea>
-                    </div>
-                    <div id="measurement-input"> 
-                        <input id="new-measurements1" type="text" placeholder=" Enter first measurement"/>
-                        <input id="new-measurements2" type="text" placeholder=" Enter second measurement"/>
-                        <input id="new-measurements3" type="text" placeholder=" Enter third measurement"/>
-                        <input id="new-measurements4" type="text" placeholder=" Enter fourth measurement"/>
-                        <input id="new-measurements5" type="text" placeholder=" Enter fifth measurement"/>
-                        <input id="new-measurements6" type="text" placeholder=" Enter sixth measurement"/>
-                        <input id="new-measurements7" type="text" placeholder=" Enter seventh measurement"/>
-                        <input id="new-measurements8" type="text" placeholder=" Enter eighth measurement"/>
-                        <input id="new-measurements9" type="text" placeholder=" Enter ninth measurement"/>
-                        <input id="new-measurements10" type="text" placeholder=" Enter tenth measurement"/>
-                    </div>
-                    <div id="ingredient-input">
-                        <input id="new-ingredients1" type="text" placeholder=" Enter first ingredient"/>
-                        <input id="new-ingredients2" type="text" placeholder=" Enter second ingredient"/>
-                        <input id="new-ingredients3" type="text" placeholder=" Enter third ingredient"/>
-                        <input id="new-ingredients4" type="text" placeholder=" Enter fourth ingredient"/>
-                        <input id="new-ingredients5" type="text" placeholder=" Enter fifth ingredient"/>
-                        <input id="new-ingredients6" type="text" placeholder=" Enter sixth ingredient"/>
-                        <input id="new-ingredients7" type="text" placeholder=" Enter seventh ingredient"/>
-                        <input id="new-ingredients8" type="text" placeholder=" Enter eighth ingredient"/>
-                        <input id="new-ingredients9" type="text" placeholder=" Enter ninth ingredient"/>
-                        <input id="new-ingredients10" type="text" placeholder=" Enter tenth ingredient"/>
-                    </div>
-                </div>
-                <button type="submit" id="submit">Submit</button>
-                <button type="button" id="close" onclick="closeForm()">X</button>
-            </form>
-        </div>
-    </header>
-    <div id="main-container">
-        <nav>
-            <ul id="meal-list">
-            </ul>
-        </nav>
-        <div id="meal-info">
-            <div id="left-container">
-                <div id="text-details">
-                    <h1 id="meal-name"></h1>
-                    <!-- <img id="meal-image" src=""> -->
-                    <h3 id="meal-category"></h3>
-                    <h3 id="meal-area"></h3>
-                </div>
-               
-                <div id="img-center">
-                    <img id="meal-image" src="">
-                </div>
+            <div id="page-title">
+                <h1>Meals Around the World</h1>
             </div>
-            <!-- <a id="meal-video" href=""></a>  -->
-
-            <div id="right-container">
-                <div id="lists">
-                    <ul id="ingredients-list">
-                    </ul>
-                    <ul id="measurement-list">
-                    </ul>
+            <div id="search-form-container">
+                <!-- <form action="" class="search-form"> -->
+                <div class="form-control">
+                    <label id="label" form="meal">Search by Meal Name:</label>
+                    <input type="text" name="meal" id="meal">
                 </div>
-                <div id="description">
-                    <p id="meal-instructions"></p>
+                <!-- </form> -->
+            </div>
+            <button id="random-meal" onclick="displayRandomMeal()">Random Meal</button>
+            <button id="open" onclick="openForm()">Open to Add Meal</button>
+            <div id="mealModal">
+                <form  id="form-container">
+                    <h2>Add Meal</h2>
+                    <div id="inputs">
+                        <div id="meal-input">
+                            
+
+                            <input id="new-name" type="text" name="name" placeholder=" Enter a meal name"/>
+
+                            <input id="new-category" type="text" name="category"  placeholder=" Enter meal's category"/>
+
+                            <input id="new-location" type="text" name="location" placeholder=" Enter meal's destination"/>
+
+                            <input id="new-image" type="text"  placeholder=" Enter a meal's image URL"/>
+
+                            
+                            <textarea id="new-instruction" placeholder=" Enter a meal's recipe"></textarea>
+                        </div>
+                        <div id="measurement-input"> 
+                            <input id="new-measurements1" type="text" placeholder=" Enter first measurement"/>
+                            <input id="new-measurements2" type="text" placeholder=" Enter second measurement"/>
+                            <input id="new-measurements3" type="text" placeholder=" Enter third measurement"/>
+                            <input id="new-measurements4" type="text" placeholder=" Enter fourth measurement"/>
+                            <input id="new-measurements5" type="text" placeholder=" Enter fifth measurement"/>
+                            <input id="new-measurements6" type="text" placeholder=" Enter sixth measurement"/>
+                            <input id="new-measurements7" type="text" placeholder=" Enter seventh measurement"/>
+                            <input id="new-measurements8" type="text" placeholder=" Enter eighth measurement"/>
+                            <input id="new-measurements9" type="text" placeholder=" Enter ninth measurement"/>
+                            <input id="new-measurements10" type="text" placeholder=" Enter tenth measurement"/>
+                        </div>
+                        <div id="ingredient-input">
+                            <input id="new-ingredients1" type="text" placeholder=" Enter first ingredient"/>
+                            <input id="new-ingredients2" type="text" placeholder=" Enter second ingredient"/>
+                            <input id="new-ingredients3" type="text" placeholder=" Enter third ingredient"/>
+                            <input id="new-ingredients4" type="text" placeholder=" Enter fourth ingredient"/>
+                            <input id="new-ingredients5" type="text" placeholder=" Enter fifth ingredient"/>
+                            <input id="new-ingredients6" type="text" placeholder=" Enter sixth ingredient"/>
+                            <input id="new-ingredients7" type="text" placeholder=" Enter seventh ingredient"/>
+                            <input id="new-ingredients8" type="text" placeholder=" Enter eighth ingredient"/>
+                            <input id="new-ingredients9" type="text" placeholder=" Enter ninth ingredient"/>
+                            <input id="new-ingredients10" type="text" placeholder=" Enter tenth ingredient"/>
+                        </div>
+                    </div>
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="button" id="close" onclick="closeForm()">X</button>
+                </form>
+            </div>
+        </header>
+        <div id="main-container">
+            <nav>
+                <ul id="meal-list">
+                </ul>
+            </nav>
+            <div id="meal-info">
+                <div id="left-container">
+                    <div id="text-details">
+                        <h1 id="meal-name"></h1>
+                        <!-- <img id="meal-image" src=""> -->
+                        <h3 id="meal-category"></h3>
+                        <h3 id="meal-area"></h3>
+                    </div>
+                    <div id="img-center">
+                        <img id="meal-image" src="">
+                    </div>
+                </div>
+                <div id="right-container">
+                    <div id="lists">
+                        <ul id="ingredients-list">
+                        </ul>
+                        <ul id="measurement-list">
+                        </ul>
+                    </div>
+                    <div id="description">
+                        <p id="meal-instructions"></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body> 
 </html>
