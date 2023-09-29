@@ -1,14 +1,14 @@
-# Meals Around the World Project
+# Meals Around the World
 
-The developers created a project, Meals Around the World, using HTML, CSS, API, and JavaScript. This web app uses TheMealDB to fetch all meal data from its [API](https://www.themealdb.com/api/json/v1/1/search.php?s=). TheMealDB API is an open database focusing on recipes from around the world. This web app is intended for people to access the list of meals from different countries. The users can click on a meal to see the list of meals that displays the name of the meal, its image, what category it is, where it came from, how to make it, its measurements, and more. Furthermore, the web app allows users to type on a search tab to search for a specific meal list. There is a form for a user to input to add a meal with information that is added to the list of meals.
+Welcome to Meals Around the World. Meals Around the World is a single-page JavaScript web application that uses TheMealDB to fetch meal recipes from its [API](https://www.themealdb.com/api/json/v1/1/search.php?s=). TheMealDB API is an open database focusing on recipes from around the world. This web app is intended for people to access the list of meals from different countries. The users can click on a meal to see the list of meals that displays the name of the meal, its image, what category it is, where it came from, how to make it, its measurements, and more. Furthermore, the web app allows users to type on a search tab to search for a specific meal list. There is a form for a user to input to add a meal with information that is added to the list of meals.
 
 **Note**: Adding a meal is not persistent, so refreshing the browser will lose the meal the users added.
 
 #### Project Developers:
 
-- [Isaac Wilhite](https://github.com/isaacwilhite)
-- [Isaac Song](https://github.com/isaacsong1)
 - [Hanna Negash](https://github.com/Hanna-N9)
+- [Isaac Song](https://github.com/isaacsong1)
+- [Isaac Wilhite](https://github.com/isaacwilhite)
 
 ---
 
@@ -16,30 +16,71 @@ The developers created a project, Meals Around the World, using HTML, CSS, API, 
 
 # In progress!!!!!!!!!
 
-## To run the app
+## Installation
 
 #### 1. Fork this repository
 
 ![Alt text](/images/image.png)
 
-#### 2. Clone from SSH
+#### 2. Clone from SSH into your local environment
 
 ![Alt text](/images/image-1.png)
 
 ```shell
- git clone git@github.com:isaacsong1/Meals-Around-the-World.git
+git clone git@github.com:isaacsong1/Meals-Around-the-World.git
 ```
 
-#### 3. In the terminal, open the file to check in the browser
+#### 3. Start local JSON Server. Inside terminal, run
 
 ```shell
- open index.html
+json-server --watch db.json
 ```
 
+#### 4. In the terminal, open the file to check in the browser
+Mac:
+```shell
+open index.html
+```
+Windows:
+```shell
+explorer.exe index.html
+```
 ---
+## Usage
 
+#### Analyze recipe information
+* Meal name, category, and country of origin
+* Picture of the dish
+* Ingredient and measurement list
+* Instructions on how to prepare the dish
+
+#### Interact with navigation bar on the left
+* View selected meal on the main page by clicking on meal name
+
+#### Search desired meals
+* Enter the name of the dish in the search bar then press 'enter'
+* Navigation bar on the left should be updated with names including search parameter
+* Click on meal name in navigation bar to display information on the main page
+
+#### Add your own meal and display it on the main page once submitted
+* Click on 'Open to Add Meal' button
+* Enter new meal's information per instructions below
+    * Meal's Name (Ex: Chicken Nuggets)
+    * Category (Ex: Chicken)
+    * Country of Origin (Ex: American)
+    * Image URL
+    * Measurements and Ingredients items separated by commas (Ex: 3, Chicken Breasts, 1 cup, Bread Crumbs, 1 tbsp, Dried Basil, ...)
+    * Directions
+* Press 'Submit' button and meal will display on the main page and meal's name will be appended to navigation bar
+* Form is cleared, press 'X' to close modal
+
+#### Display a random meal
+* Can't figure out what to eat? We have that covered.
+* Press the 'Random Meal' button and a meal will appear on the main page with all the information
+
+---
 ## References
 
-- [Themealdb API](https://www.themealdb.com/api/json/v1/1/search.php?s=)
-- [Main themealdb site](https://www.themealdb.com/api.php)
+- [TheMealDB API](https://www.themealdb.com/api/json/v1/1/search.php?s=)
+- [TheMealDB Main Website](https://www.themealdb.com/api.php)
 - [Explore TheMealDB API using JavaScript](https://publicapis.io/the-meal-db-api)
